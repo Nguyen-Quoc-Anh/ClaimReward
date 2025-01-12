@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .title span {
+      font-size: 1.5em;
+      /* Kích thước chữ 1.5em */
+    }
+  </style>
+  <title>Valentine</title>
+</head>
+
+<body>
+  <main class="container">
+    <img class="cat-img" src="https://media.giphy.com/media/9xt1MUZqkneFiWrAAD/giphy.gif?cid=790b7611olpb21hnvnk4eodnax6ghhmsdlfksqfsllvedelm&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Picture of reward" />
+    <p class="title">
+      Chúc mừng Trang đã vượt qua được thử thách nhóoo<br /><span>Nếu mà em không chọn là coi như không lấy phần thưởng à nhaaa</span>
+    </p>
+    <div class="buttons">
+      <button type="button" class="btn btn--yes">Lấy phần thưởng</button>
+      <button type="button" class="btn btn--no">Không lấy</button>
+    </div>
+  </main>
+
+  <script>
+
+    const titleElement = document.querySelector(".title");
+    const buttonsContainer = document.querySelector(".buttons");
+    const yesButton = document.querySelector(".btn--yes");
+    const noButton = document.querySelector(".btn--no");
+    const catImg = document.querySelector(".cat-img");
+    yesButton.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - 150));
+      const y = Math.floor(Math.random() * (window.innerHeight - 150));
+      yesButton.style.position = `absolute`
+      yesButton.style.left = `${x}px`
+      yesButton.style.top = `${y}px`
+    });
+
+
+    noButton.addEventListener("click", () => {
+      titleElement.innerHTML = "Buồn quá à 😭 Anh có lòng mà em không có dạ gì cả";
+      buttonsContainer.classList.add("hidden");
+      catImg.src = `https://media.giphy.com/media/SVkhYVCi8fKPKvypi6/giphy.gif`;
+    });
+  </script>
+</body>
+
+</html>
